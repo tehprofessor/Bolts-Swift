@@ -268,7 +268,7 @@ public final class Task<TResult> {
 
     // MARK: Internal
 
-    func appendOrRunContinuation(_ continuation: Continuation) {
+    func appendOrRunContinuation(_ continuation: @escaping Continuation) {
         var runContinuation = false
         synchronizationQueue.sync(flags: .barrier, execute: {
             switch self._state {
